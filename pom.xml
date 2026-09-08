@@ -6,6 +6,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- Spring Boot -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -13,12 +14,16 @@
         <relativePath/>
     </parent>
 
+    <!-- Project Information -->
     <groupId>com.rachit</groupId>
     <artifactId>placementportal</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <name>SmartPlacementPortal</name>
     <description>Smart Placement Portal using Spring Boot + JSP</description>
+
+    <!-- IMPORTANT FOR JSP DEPLOYMENT -->
+    <packaging>war</packaging>
 
     <properties>
         <java.version>17</java.version>
@@ -51,12 +56,6 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!-- DevTools -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-        </dependency>
-
         <!-- JSP -->
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
@@ -74,7 +73,7 @@
             <artifactId>jakarta.servlet.jsp.jstl</artifactId>
         </dependency>
 
-        <!-- Spring Security Crypto (Password Encryption) -->
+        <!-- Password Encryption -->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-crypto</artifactId>
@@ -84,6 +83,13 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- DevTools -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
         </dependency>
 
@@ -99,6 +105,7 @@
     <build>
         <plugins>
 
+            <!-- Spring Boot Maven Plugin -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
